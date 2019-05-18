@@ -8,12 +8,13 @@ Prisma 설명
 
 ## Facebook Function
 
-- [ ] 계정 생성 (Mutation)
-- [ ] 이메일로 Secret키 보내기 (Mutation)
-- [ ] 인증키 확인(Login) (Mutation)
-- [ ] 로그인 - Page 처음 접속시 이메일 입력, 사용자의 이메일로 비밀값 전송, nodemailer이용 (Mutation)
-- [ ] 좋아요 / 좋아요 취소 (Mutation)
+- [x] 계정 생성 (Mutation)
+- [x] 이메일로 Secret키 보내기 (Mutation)
+- [x] 인증키 확인(Login) (Mutation)
+- [x] 로그인 - Page 처음 접속시 이메일 입력, 사용자의 이메일로 비밀값 전송, nodemailer이용 (Mutation)
+- [x] 좋아요 / 좋아요 취소 (Mutation)
 - [ ] 사진에 댓글 달기 (Mutation)
+- [ ] 사진에 댓글 수정/ 삭제 (Mutation)
 - [ ] 유저 검색 (Mutation)
 - [ ] 친구 맺고 끊기 (Mutation)
 - [ ] 팔로우 / 언팔로우 (Mutation)

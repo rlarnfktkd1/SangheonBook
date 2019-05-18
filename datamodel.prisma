@@ -7,8 +7,8 @@ type User {
   firstName: String! @default(value: "")
   lastName: String!
   fullName: String
-  isFriend: Boolean!
-  isSelf: Boolean!
+  isFriend: Boolean
+  isSelf: Boolean
   bio: String
   followers: [User!]! @relation(name: "FollowRelation")
   following: [User!]! @relation(name: "FollowRelation")
@@ -39,7 +39,7 @@ type Like {
   id: ID! @id @unique
   user: User @relation(name: "LikesOfUser")
   post: Post @relation(name: "LikeOfPost")
-  like: Comment @relation(name: "LikeOfComment")
+  comment: Comment @relation(name: "LikeOfComment")
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
 }
@@ -49,7 +49,7 @@ type Comment {
   text: String!
   user: User @relation(name: "CommentsOfUser")
   post: Post @relation(name: "CommentOfPost")
-  likes: [Like!]! @relation(name: "LikeOfComment", onDelete: CASCADE)
+  like: [Like!]! @relation(name: "LikeOfComment", onDelete: CASCADE)
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
 }
@@ -78,4 +78,9 @@ type Message {
   room: Room!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
+}
+
+type Page {
+  id: ID! @id @unique
+  text: String!
 }

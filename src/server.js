@@ -1,15 +1,20 @@
 import "./env";
-import schema from "./schema";
 import { GraphQLServer } from "graphql-yoga";
 import logger from "morgan";
+import schema from "./schema";
+import "./passport";
+import { authenticateJwt } from "./passport";
+import { isAuthenticated } from "./middlewares";
 
 const PORT = process.env.PORT || 3456;
 
 const server = new GraphQLServer({
-  schema
+  schema,
+  context: ({ request }) => ({ request, isAuthenticated })
 });
 
 server.express.use(logger("dev"));
+server.express.use(authenticateJwt);
 
 const serverStart = () => {
   console.log(`✔️  Facebook Server running on http://localhost:${PORT}`);
